@@ -1,0 +1,61 @@
+[package]
+name = "trace-extractor"
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+
+# Starting in Rust 1.62 you can use `cargo add` to add dependencies 
+# to your project.
+#
+# If you're using an older Rust version,
+# download cargo-edit(https://github.com/killercup/cargo-edit#installation) 
+# to install the `add` subcommand.
+#
+# Running `cargo add DEPENDENCY_NAME` will
+# add the latest version of a dependency to the list,
+# and it will keep the alphabetic ordering for you.
+
+[dependencies]
+# WIll want to remove this
+foundry-common = { git = "https://github.com/foundry-rs/foundry.git", version = "0.2.0" }
+foundry-config = { git = "https://github.com/foundry-rs/foundry.git", version = "0.2.0" }
+foundry-evm-core = { git = "https://github.com/foundry-rs/foundry.git", version = "0.2.0" }
+foundry-evm-traces = { git = "https://github.com/foundry-rs/foundry.git", version = "0.2.0" }
+foundry-evm = { git = "https://github.com/foundry-rs/foundry.git", version = "0.2.0" }
+foundry-compilers = { version = "0.3.10", default-features = false }
+
+## ethers
+ethers = { version = "2.0.14", default-features = false }
+ethers-core = { version = "2.0.14", default-features = false }
+ethers-providers = { version = "2.0.14", default-features = false }
+
+# revm
+revm = { version = "3", default-features = false }
+revm-primitives = { version = "1", default-features = false }
+
+## alloy
+alloy-primitives = "0.5.0"
+alloy-dyn-abi = "0.5.0"
+alloy-json-abi = "0.5.0"
+alloy-sol-types = "0.5.0"
+syn-solidity = "0.5.0"
+
+alloy-chains = "0.1.5"
+alloy-rlp = "0.3.3"
+solang-parser = "=0.3.3"
+
+lambda_http = "0.7"
+lambda_runtime = "0.7"
+tokio = { version = "1.35.0", features = ["macros"] }
+
+tracing = { version = "0.1", features = ["log"] }
+tracing-subscriber = { version = "0.3", default-features = false, features = [
+    "fmt",
+] }
+serde = "1.0.193"
+serde_json = "1.0.108"
+libz-sys = "1.1.15"
+
+reqwest = { version = "0.11", features = ["json"] }
+
+structopt = "0.3"
